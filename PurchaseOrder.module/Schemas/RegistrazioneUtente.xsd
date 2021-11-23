@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/RegistrazioneUtente" xmlns:tns="http://www.example.org/RegistrazioneUtente" elementFormDefault="qualified" xmlns:Q1="http://www.example.org/Reg_Anagrafica" xmlns:Q2="http://www.example.org/Reg_Indirizzo" xmlns:Q3="http://www.example.org/Reg_MetodoPagamento">
+
+    <import namespace="http://www.example.org/Reg_MetodoPagamento"></import>
+    <import namespace="http://www.example.org/Reg_Indirizzo"></import>
+    <import namespace="http://www.example.org/Reg_Anagrafica"></import>
+    <element name="RegistrazioneUtente" type="tns:RegistrazioneUtenteType"></element>
+
+    <complexType name="RegistrazioneUtenteType">
+    	<sequence>
+    		<element name="Anagrafica" type="Q1:AnagraficaType"></element>
+            <element name="MetodoPagamento" type="Q3:MetodoPagamentoType" minOccurs="0" maxOccurs="unbounded"></element>
+            <element name="Indirizzo" type="Q2:IndirizzoType" minOccurs="0" maxOccurs="unbounded"></element>
+    	</sequence>
+    </complexType>
+</schema>

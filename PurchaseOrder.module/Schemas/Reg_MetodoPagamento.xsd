@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/Reg_MetodoPagamento" xmlns:tns="http://www.example.org/Reg_MetodoPagamento" elementFormDefault="qualified">
+
+    <element name="MetodoPagamento" type="tns:MetodoPagamentoType"></element>
+    
+    <complexType name="MetodoPagamentoType">
+    	<sequence>
+            <element name="Username" type="string"></element>
+            <element name="Numero_Carta" type="string"></element>
+    		<element name="Data_Scadenza" type="date"></element>
+    		<element name="Codice_Sicurezza" type="string"></element>
+    	</sequence>
+    </complexType>
+</schema>

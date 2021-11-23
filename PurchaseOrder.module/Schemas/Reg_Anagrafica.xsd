@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/Reg_Anagrafica" xmlns:tns="http://www.example.org/Reg_Anagrafica" elementFormDefault="qualified">
+
+    <element name="Anagrafica" type="tns:AnagraficaType"></element>
+    
+    <complexType name="AnagraficaType">
+    	<sequence>
+    		<element name="Nome" type="string"></element>
+    		<element name="Cognome" type="string"></element>
+    		<element name="Data_Nascita" type="date"></element>
+    		<element name="Codice_Fiscale" type="string"></element>
+    		<element name="Indirizzo_email" type="string"></element>
+    		<element name="Username" type="string"></element>
+    	</sequence>
+    </complexType>
+</schema>

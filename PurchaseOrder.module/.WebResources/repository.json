@@ -1,0 +1,13 @@
+{
+    "records": [],
+    "resources": [
+        {
+            "location": "Service Descriptors/PurchaseOrder.Main.RegistrazioneUtente-RegistrazioneUtente.json",
+            "type": "generated"
+        },
+        {
+            "location": "Service Descriptors/PurchaseOrder.Main.RegistrazioneUtente_Anagrafica-RegistrazioneUtente_Anagrafica.json",
+            "type": "generated"
+        }
+    ]
+}

@@ -1,0 +1,158 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "1.0",
+    "title" : "RegistrazioneUtente",
+    "description" : "RegistrazioneUtente service"
+  },
+  "host" : "localhost:8080",
+  "basePath" : "/",
+  "schemes" : [ "http" ],
+  "paths" : {
+    "/registrazioneutente_MetodoPagamento" : {
+      "post" : {
+        "summary" : "postRegistrazioneUtente",
+        "description" : "postRegistrazioneUtente",
+        "operationId" : "post-registrazioneutente_MetodoPagamento",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "body",
+          "in" : "body",
+          "description" : "",
+          "schema" : {
+            "$ref" : "#/definitions/MetodoPagamento"
+          },
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "a string to be returned",
+            "schema" : {
+              "type" : "string"
+            }
+          }
+        }
+      }
+    },
+    "/registrazioneutente_anagrafica" : {
+      "post" : {
+        "summary" : "postRegistrazioneUtente",
+        "description" : "postRegistrazioneUtente",
+        "operationId" : "post-registrazioneutente_anagrafica",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "body",
+          "in" : "body",
+          "description" : "",
+          "schema" : {
+            "$ref" : "#/definitions/Anagrafica"
+          },
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "a string to be returned",
+            "schema" : {
+              "type" : "string"
+            }
+          }
+        }
+      }
+    },
+    "/registrazioneutente_IndirizzoSpedizione" : {
+      "post" : {
+        "summary" : "postRegistrazioneUtente",
+        "description" : "postRegistrazioneUtente",
+        "operationId" : "post-registrazioneutente_IndirizzoSpedizione",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "body",
+          "in" : "body",
+          "description" : "",
+          "schema" : {
+            "$ref" : "#/definitions/Indirizzo"
+          },
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "a string to be returned",
+            "schema" : {
+              "type" : "string"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "Anagrafica" : {
+      "type" : "object",
+      "required" : [ "Data_Nascita", "Indirizzo_email", "Username", "Nome", "Codice_Fiscale", "Cognome" ],
+      "properties" : {
+        "Nome" : {
+          "type" : "string"
+        },
+        "Cognome" : {
+          "type" : "string"
+        },
+        "Data_Nascita" : {
+          "type" : "string",
+          "format" : "date"
+        },
+        "Codice_Fiscale" : {
+          "type" : "string"
+        },
+        "Indirizzo_email" : {
+          "type" : "string"
+        },
+        "Username" : {
+          "type" : "string"
+        }
+      }
+    },
+    "Indirizzo" : {
+      "type" : "object",
+      "required" : [ "CAP", "Username", "Provincia", "Comune", "Via" ],
+      "properties" : {
+        "Username" : {
+          "type" : "string"
+        },
+        "Comune" : {
+          "type" : "string"
+        },
+        "Provincia" : {
+          "type" : "string"
+        },
+        "CAP" : {
+          "type" : "string"
+        },
+        "Via" : {
+          "type" : "string"
+        }
+      }
+    },
+    "MetodoPagamento" : {
+      "type" : "object",
+      "required" : [ "Data_Scadenza", "Numero_Carta", "Username", "Codice_Sicurezza" ],
+      "properties" : {
+        "Username" : {
+          "type" : "string"
+        },
+        "Numero_Carta" : {
+          "type" : "string"
+        },
+        "Data_Scadenza" : {
+          "type" : "string",
+          "format" : "date"
+        },
+        "Codice_Sicurezza" : {
+          "type" : "string"
+        }
+      }
+    }
+  }
+}

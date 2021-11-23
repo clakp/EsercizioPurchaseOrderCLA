@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sca:composite xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:BW="http://xsd.tns.tibco.com/amf/models/sca/implementationtype/BW" xmlns:XMLSchema="http://www.w3.org/2001/XMLSchema" xmlns:compositeext="http://schemas.tibco.com/amx/3.0/compositeext" xmlns:rest="http://xsd.tns.tibco.com/bw/models/binding/rest" xmlns:sca="http://www.osoa.org/xmlns/sca/1.0" xmlns:scact="http://xsd.tns.tibco.com/amf/models/sca/componentType" xmlns:scaext="http://xsd.tns.tibco.com/amf/models/sca/extensions" xmi:id="_Pq0BsExGEeydt8hqp69Tzg" targetNamespace="http://tns.tibco.com/bw/composite/PurchaseOrder.module" name="PurchaseOrder.module" compositeext:version="1.0.0" compositeext:formatVersion="2">
+  <sca:service xmi:id="_Ptv0ZExbEeydt8hqp69Tzg" name="registrazioneutente_anagrafica" promote="ComponentRegistrazioneUtente/registrazioneutente_anagrafica">
+    <sca:interface.wsdl xmi:id="_Pt5lYExbEeydt8hqp69Tzg" interface="http://xmlns.example.com/20211123134532PLT#wsdl.interface(registrazioneutente_anagrafica)" scaext:wsdlLocation="../Processes/PurchaseOrder/Main/RegistrazioneUtente.bwp"/>
+    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_Pt5lYUxbEeydt8hqp69Tzg" name="RestService" path="/registrazioneutente_anagrafica" docBasePath="http://localhost:7777/PurchaseOrder.module" docResourcePath="RegistrazioneUtente" basePath="/" connector="purchaseorder.module.RegistrazioneUtente" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/PurchaseOrder.Main.RegistrazioneUtente-RegistrazioneUtente.json">
+      <operation xmi:id="_Pt5lY0xbEeydt8hqp69Tzg" operationName="post" nickname="post-registrazioneutente_anagrafica" httpMethod="POST" notes="postRegistrazioneUtente" responseStyle="element" requestStyle="element" outputPartName="Risposta_anagrafica">
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <parameters xmi:id="_Pt5lZUxbEeydt8hqp69Tzg"/>
+      <advancedConfig xmi:id="_Pt5lYkxbEeydt8hqp69Tzg" blockingQueueSize="2147483647"/>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_Pt5lZExbEeydt8hqp69Tzg" bindingName="RestService"/>
+  </sca:service>
+  <sca:service xmi:id="_VzSPQkxbEeydt8hqp69Tzg" name="registrazioneutente_MetodoPagamento" promote="ComponentRegistrazioneUtente/registrazioneutente_MetodoPagamento">
+    <sca:interface.wsdl xmi:id="_VzSPRkxbEeydt8hqp69Tzg" interface="http://xmlns.example.com/20211123134532PLT#wsdl.interface(registrazioneutente_MetodoPagamento)" scaext:wsdlLocation="../Processes/PurchaseOrder/Main/RegistrazioneUtente.bwp"/>
+    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_VzSPR0xbEeydt8hqp69Tzg" name="RestService1" path="/registrazioneutente_MetodoPagamento" docBasePath="http://localhost:7777/PurchaseOrder.module" docResourcePath="RegistrazioneUtente" basePath="/" connector="purchaseorder.module.RegistrazioneUtente" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/PurchaseOrder.Main.RegistrazioneUtente-RegistrazioneUtente.json">
+      <operation xmi:id="_VzSPSUxbEeydt8hqp69Tzg" operationName="post" nickname="post-registrazioneutente_MetodoPagamento" httpMethod="POST" notes="postRegistrazioneUtente" responseStyle="element" requestStyle="element" outputPartName="Risposta_pagamento">
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <parameters xmi:id="_VzlKMExbEeydt8hqp69Tzg"/>
+      <advancedConfig xmi:id="_VzSPSExbEeydt8hqp69Tzg" blockingQueueSize="2147483647"/>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_VzSPSkxbEeydt8hqp69Tzg" bindingName="RestService1"/>
+  </sca:service>
+  <sca:service xmi:id="_fDLtUkxbEeydt8hqp69Tzg" name="registrazioneutente_IndirizzoSpedizione" promote="ComponentRegistrazioneUtente/registrazioneutente_IndirizzoSpedizione">
+    <sca:interface.wsdl xmi:id="_fDLtVkxbEeydt8hqp69Tzg" interface="http://xmlns.example.com/20211123134532PLT#wsdl.interface(registrazioneutente_IndirizzoSpedizione)" scaext:wsdlLocation="../Processes/PurchaseOrder/Main/RegistrazioneUtente.bwp"/>
+    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_fDLtV0xbEeydt8hqp69Tzg" name="RestService2" path="/registrazioneutente_IndirizzoSpedizione" docBasePath="http://localhost:7777/PurchaseOrder.module" docResourcePath="RegistrazioneUtente" basePath="/" connector="purchaseorder.module.RegistrazioneUtente" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/PurchaseOrder.Main.RegistrazioneUtente-RegistrazioneUtente.json">
+      <operation xmi:id="_fDLtWUxbEeydt8hqp69Tzg" operationName="post" nickname="post-registrazioneutente_IndirizzoSpedizione" httpMethod="POST" notes="postRegistrazioneUtente" responseStyle="element" requestStyle="element" outputPartName="Risposta_indirizzo">
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <parameters xmi:id="_fDi5sExbEeydt8hqp69Tzg"/>
+      <advancedConfig xmi:id="_fDLtWExbEeydt8hqp69Tzg" blockingQueueSize="2147483647"/>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_fDLtWkxbEeydt8hqp69Tzg" bindingName="RestService2"/>
+  </sca:service>
+  <sca:property xmi:id="_QlWXUExGEeydt8hqp69Tzg" name="BW.DEPLOYMENTUNIT.TYPE" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_QldsEExGEeydt8hqp69Tzg" name="BW.APPNODE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_QlkZwExGEeydt8hqp69Tzg" name="BW.DEPLOYMENTUNIT.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_QlpSQExGEeydt8hqp69Tzg" name="BW.HOST.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_QlqgYExGEeydt8hqp69Tzg" name="BW.DOMAIN.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_QlvY4ExGEeydt8hqp69Tzg" name="BW.DEPLOYMENTUNIT.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_QlwnAExGEeydt8hqp69Tzg" name="BW.APPSPACE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_Ql1fgExGEeydt8hqp69Tzg" name="BW.MODULE.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_Ql2toExGEeydt8hqp69Tzg" name="BW.MODULE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:component xmi:id="_Ptv0YExbEeydt8hqp69Tzg" name="ComponentRegistrazioneUtente" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_Ptv0YUxbEeydt8hqp69Tzg" processName="PurchaseOrder.Main.RegistrazioneUtente"/>
+    <sca:service xmi:id="_Ptv0YkxbEeydt8hqp69Tzg" name="registrazioneutente_anagrafica">
+      <sca:interface.wsdl xmi:id="_Ptv0Y0xbEeydt8hqp69Tzg" interface="http://xmlns.example.com/20211123134532PLT#wsdl.interface(registrazioneutente_anagrafica)" scaext:wsdlLocation="../Processes/PurchaseOrder/Main/RegistrazioneUtente.bwp"/>
+    </sca:service>
+    <sca:service xmi:id="_VzSPQExbEeydt8hqp69Tzg" name="registrazioneutente_MetodoPagamento">
+      <sca:interface.wsdl xmi:id="_VzSPQUxbEeydt8hqp69Tzg" interface="http://xmlns.example.com/20211123134532PLT#wsdl.interface(registrazioneutente_MetodoPagamento)"/>
+    </sca:service>
+    <sca:service xmi:id="_fDLtUExbEeydt8hqp69Tzg" name="registrazioneutente_IndirizzoSpedizione">
+      <sca:interface.wsdl xmi:id="_fDLtUUxbEeydt8hqp69Tzg" interface="http://xmlns.example.com/20211123134532PLT#wsdl.interface(registrazioneutente_IndirizzoSpedizione)" scaext:wsdlLocation="../Processes/PurchaseOrder/Main/RegistrazioneUtente.bwp"/>
+    </sca:service>
+  </sca:component>
+</sca:composite>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/Reg_Indirizzo" xmlns:tns="http://www.example.org/Reg_Indirizzo" elementFormDefault="qualified">
+
+    <element name="Indirizzo" type="tns:IndirizzoType"></element>
+    
+    <complexType name="IndirizzoType">
+    	<sequence>
+            <element name="Username" type="string"></element>
+            <element name="Comune" type="string"></element>
+    		<element name="Provincia" type="string"></element>
+    		<element name="CAP" type="string"></element>
+    		<element name="Via" type="string"></element>
+    	</sequence>
+    </complexType>
+</schema>
