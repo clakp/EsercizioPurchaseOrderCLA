@@ -12,10 +12,79 @@
     xmlns:ns3="http://www.example.org/Readandwrite"
     xmlns:ns4="http://www.example.org/Reg_MetodoPagamento"
     xmlns:ns5="http://www.example.org/Reg_Indirizzo"
+    xmlns:ns6="http://www.example.com/namespaces/tns/1637792013126"
     xmlns:sca="http://docs.oasis-open.org/ns/opencsa/sca/200912"
     xmlns:sca-bpel="http://docs.oasis-open.org/ns/opencsa/sca-bpel/200801"
     xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"
     xmlns:tibprop="http://ns.tibco.com/bw/property" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <tibex:VariableDescriptor type="MemorySaving">
+        <task name="postOut">
+            <endingVariables>
+                <variable>postOut-input</variable>
+                <variable>Anagrafica</variable>
+            </endingVariables>
+        </task>
+        <task name="Anagrafica">
+            <endingVariables>
+                <variable>Anagrafica-input</variable>
+                <variable>post</variable>
+            </endingVariables>
+        </task>
+        <task name="Log">
+            <endingVariables>
+                <variable>Log-input</variable>
+            </endingVariables>
+        </task>
+        <task name="Log1">
+            <endingVariables>
+                <variable>Log1-input</variable>
+            </endingVariables>
+        </task>
+        <task name="postOut1">
+            <endingVariables>
+                <variable>postOut1-input</variable>
+                <variable>MetodoPagamento</variable>
+            </endingVariables>
+        </task>
+        <task name="MetodoPagamento">
+            <endingVariables>
+                <variable>MetodoPagamento-input</variable>
+                <variable>post1</variable>
+            </endingVariables>
+        </task>
+        <task name="Log2">
+            <endingVariables>
+                <variable>Log2-input</variable>
+            </endingVariables>
+        </task>
+        <task name="Log3">
+            <endingVariables>
+                <variable>Log3-input</variable>
+            </endingVariables>
+        </task>
+        <task name="postOut2">
+            <endingVariables>
+                <variable>postOut2-input</variable>
+                <variable>IndirizzoSpedizione</variable>
+            </endingVariables>
+        </task>
+        <task name="IndirizzoSpedizione">
+            <endingVariables>
+                <variable>IndirizzoSpedizione-input</variable>
+                <variable>post2</variable>
+            </endingVariables>
+        </task>
+        <task name="Log4">
+            <endingVariables>
+                <variable>Log4-input</variable>
+            </endingVariables>
+        </task>
+        <task name="Log5">
+            <endingVariables>
+                <variable>Log5-input</variable>
+            </endingVariables>
+        </task>
+    </tibex:VariableDescriptor>
     <tibex:Types>
         <xs:schema attributeFormDefault="unqualified"
             elementFormDefault="qualified"
@@ -1618,7 +1687,7 @@
                             <styles xsi:type="bwnotation:BackgroundStyle"/>
                             <styles xsi:type="bwnotation:ResizingStyle"/>
                             <element href="//0/@process/@activity"/>
-                            <layoutConstraint height="558" width="667" xsi:type="notation:Bounds"/>
+                            <layoutConstraint height="613" width="667" xsi:type="notation:Bounds"/>
                         </children>
                         <styles xsi:type="notation:SortingStyle"/>
                         <styles xsi:type="notation:FilteringStyle"/>
@@ -1628,7 +1697,7 @@
                     <styles xsi:type="bwnotation:BackgroundStyle"/>
                     <styles xsi:type="bwnotation:ResizingStyle"/>
                     <element href="//0/@process/@activity"/>
-                    <layoutConstraint height="582" width="667" x="1"
+                    <layoutConstraint height="595" width="667" x="1"
                         xsi:type="notation:Bounds" y="1"/>
                 </children>
                 <styles xsi:type="notation:SortingStyle"/>
@@ -1637,7 +1706,7 @@
             </children>
             <styles fontName="Segoe UI" lineColor="0" xsi:type="notation:ShapeStyle"/>
             <element href="//0/@process"/>
-            <layoutConstraint height="701" width="1009" xsi:type="notation:Bounds"/>
+            <layoutConstraint height="647" width="1009" xsi:type="notation:Bounds"/>
         </children>
         <styles xsi:type="notation:DiagramStyle"/>
         <element href="//0"/>
@@ -1787,6 +1856,7 @@
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.example.org/Reg_MetodoPagamento"/>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.example.org/Reg_Indirizzo"/>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.example.org/Readandwrite"/>
+    <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.example.com/namespaces/tns/1637792013126"/>
     <bpws:partnerLinks>
         <bpws:partnerLink myRole="use"
             name="registrazioneutente_anagrafica"

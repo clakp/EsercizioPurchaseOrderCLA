@@ -5,7 +5,7 @@
     "title" : "RegistrazioneUtente",
     "description" : "RegistrazioneUtente service"
   },
-  "host" : "localhost:8080",
+  "host" : "localhost:8081",
   "basePath" : "/",
   "schemes" : [ "http" ],
   "paths" : {

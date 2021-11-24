@@ -5,14 +5,14 @@
         "xsdSchemaTargetNamespace": "http://www.example.org/RegistrazioneUtente"
     },
     {
-        "jsonSchemaLocation": "/PurchaseOrder.module/Service Descriptors/PurchaseOrder.Main.RegistrazioneUtente-RegistrazioneUtente.json",
+        "jsonSchemaLocation": "/PurchaseOrder.module/Service Descriptors/PurchaseOrder.Main.RegistrazioneUtente_Anagrafica-RegistrazioneUtente_Anagrafica.json",
         "conversionType": "linked",
         "xsdSchemaTargetNamespace": "http://www.example.org/Reg_Anagrafica"
     },
     {
         "jsonSchemaLocation": "/PurchaseOrder.module/Service Descriptors/PurchaseOrder.Main.RegistrazioneUtente-RegistrazioneUtente.json",
         "conversionType": "linked",
-        "xsdSchemaTargetNamespace": "http://www.example.org/Reg_MetodoPagamento"
+        "xsdSchemaTargetNamespace": "http://www.example.org/Reg_Anagrafica"
     },
     {
         "jsonSchemaLocation": "/PurchaseOrder.module/Service Descriptors/PurchaseOrder.Main.RegistrazioneUtente-RegistrazioneUtente.json",
@@ -20,8 +20,8 @@
         "xsdSchemaTargetNamespace": "http://www.example.org/Reg_Indirizzo"
     },
     {
-        "jsonSchemaLocation": "/PurchaseOrder.module/Service Descriptors/PurchaseOrder.Main.RegistrazioneUtente_Anagrafica-RegistrazioneUtente_Anagrafica.json",
+        "jsonSchemaLocation": "/PurchaseOrder.module/Service Descriptors/PurchaseOrder.Main.RegistrazioneUtente-RegistrazioneUtente.json",
         "conversionType": "linked",
-        "xsdSchemaTargetNamespace": "http://www.example.org/Reg_Anagrafica"
+        "xsdSchemaTargetNamespace": "http://www.example.org/Reg_MetodoPagamento"
     }
 ]}
