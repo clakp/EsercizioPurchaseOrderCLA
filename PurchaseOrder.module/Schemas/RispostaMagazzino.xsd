@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/RispostaMagazzino" xmlns:tns="http://www.example.org/RispostaMagazzino" elementFormDefault="qualified" xmlns:Q1="http://www.example.org/RisultatiRicercaArticolo">
+
+    <import namespace="http://www.example.org/RisultatiRicercaArticolo"></import>
+    <element name="Risposta" type="tns:RispType"></element>
+
+    <complexType name="RispType">
+    	<sequence>
+    		<element name="Stato" type="string"></element>
+    		<element name="RisultatiRicerca"
+    			type="Q1:RisultatiRicercaArticoloType" minOccurs="0" maxOccurs="1">
+    		</element>
+    	</sequence>
+    </complexType>
+</schema>

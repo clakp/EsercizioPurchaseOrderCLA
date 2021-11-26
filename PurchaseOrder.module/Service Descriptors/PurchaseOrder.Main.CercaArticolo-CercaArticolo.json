@@ -1,0 +1,105 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "1.0",
+    "title" : "CercaArticolo",
+    "description" : "CercaArticolo service"
+  },
+  "host" : "localhost:8081",
+  "basePath" : "/",
+  "schemes" : [ "http" ],
+  "paths" : {
+    "/cercaarticolo" : {
+      "post" : {
+        "summary" : "postCercaArticolo",
+        "description" : "postCercaArticolo",
+        "operationId" : "post-cercaarticolo",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "body",
+          "in" : "body",
+          "description" : "",
+          "schema" : {
+            "$ref" : "#/definitions/RicercaArticolo"
+          },
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "a Risposta to be returned",
+            "schema" : {
+              "$ref" : "#/definitions/Risposta"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "RicercaArticolo" : {
+      "type" : "object",
+      "required" : [ "Quantità", "Nome" ],
+      "properties" : {
+        "Nome" : {
+          "type" : "string"
+        },
+        "Quantità" : {
+          "type" : "integer",
+          "format" : "int32"
+        }
+      }
+    },
+    "Articolo" : {
+      "type" : "object",
+      "required" : [ "Quantità", "Disponibilità", "Prezzo", "Descrizione", "ID", "Nome" ],
+      "properties" : {
+        "ID" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "Nome" : {
+          "type" : "string"
+        },
+        "Descrizione" : {
+          "type" : "string"
+        },
+        "Disponibilità" : {
+          "type" : "string"
+        },
+        "Quantità" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "Prezzo" : {
+          "type" : "number",
+          "format" : "float"
+        }
+      }
+    },
+    "Risposta" : {
+      "type" : "object",
+      "required" : [ "Stato" ],
+      "properties" : {
+        "Stato" : {
+          "type" : "string"
+        },
+        "RisultatiRicerca" : {
+          "$ref" : "#/definitions/RisultatiRicercaArticoloType"
+        }
+      }
+    },
+    "RisultatiRicercaArticoloType" : {
+      "type" : "object",
+      "properties" : {
+        "Articolo" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Articolo",
+            "uniqueItems" : false
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,22 +1,22 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/RisultatiRicercaArticolo" xmlns:tns="http://www.example.org/RisultatiRicercaArticolo" elementFormDefault="qualified">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.example.org/RisultatiRicercaArticolo" elementFormDefault="qualified" targetNamespace="http://www.example.org/RisultatiRicercaArticolo">
 
-    <element name="RisultatiRicercaArticolo" type="tns:RisultatiRicercaArticoloType"></element>
+    <element name="RisultatiRicercaArticolo" type="tns:RisultatiRicercaArticoloType"/>
 
     <complexType name="RisultatiRicercaArticoloType">
     	<sequence>
-    		<element name="Articolo" type="tns:ArticoloType" minOccurs="0" maxOccurs="unbounded"></element>
+    		<element maxOccurs="unbounded" minOccurs="0" name="Articolo" type="tns:ArticoloType"/>
     	</sequence>
     </complexType>
 
     <complexType name="ArticoloType">
     	<sequence>
-    		<element name="ID" type="int"></element>
-    		<element name="Nome" type="string"></element>
-    		<element name="Descrizione" type="string"></element>
-    		<element name="Disponibilità" type="string"></element>
-    		<element name="Quantità" type="int"></element>
-    		<element name="Prezzo" type="float"></element>
+    		<element name="ID" type="int"/>
+    		<element name="Nome" type="string"/>
+    		<element name="Descrizione" type="string"/>
+    		<element name="Disponibilità" type="string"/>
+    		<element name="Quantità" type="int"/>
+    		<element name="Prezzo" type="float"/>
     	</sequence>
     </complexType>
 </schema>

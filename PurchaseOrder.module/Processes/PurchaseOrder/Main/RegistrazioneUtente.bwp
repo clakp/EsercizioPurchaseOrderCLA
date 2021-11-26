@@ -1856,7 +1856,6 @@
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.example.org/Reg_MetodoPagamento"/>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.example.org/Reg_Indirizzo"/>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.example.org/Readandwrite"/>
-    <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.example.com/namespaces/tns/1637792013126"/>
     <bpws:partnerLinks>
         <bpws:partnerLink myRole="use"
             name="registrazioneutente_anagrafica"

@@ -12,6 +12,10 @@
         {
             "location": "Service Descriptors/PurchaseOrder.Main.RegistrazioneUtente_Anagrafica-RegistrazioneUtente_Anagrafica.json",
             "type": "generated"
+        },
+        {
+            "location": "Service Descriptors/PurchaseOrder.Main.CercaArticolo-CercaArticolo.json",
+            "type": "generated"
         }
     ]
 }

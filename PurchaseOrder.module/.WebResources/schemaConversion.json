@@ -23,5 +23,15 @@
         "jsonSchemaLocation": "/PurchaseOrder.module/Service Descriptors/PurchaseOrder.Main.RegistrazioneUtente-RegistrazioneUtente.json",
         "conversionType": "linked",
         "xsdSchemaTargetNamespace": "http://www.example.org/Reg_MetodoPagamento"
+    },
+    {
+        "jsonSchemaLocation": "/PurchaseOrder.module/Service Descriptors/PurchaseOrder.Main.CercaArticolo-CercaArticolo.json",
+        "conversionType": "linked",
+        "xsdSchemaTargetNamespace": "http://www.example.org/RicercaArticolo"
+    },
+    {
+        "jsonSchemaLocation": "/PurchaseOrder.module/Service Descriptors/PurchaseOrder.Main.CercaArticolo-CercaArticolo.json",
+        "conversionType": "linked",
+        "xsdSchemaTargetNamespace": "http://www.example.org/RispostaMagazzino"
     }
 ]}
