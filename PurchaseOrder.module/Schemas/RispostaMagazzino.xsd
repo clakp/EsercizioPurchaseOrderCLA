@@ -1,14 +1,13 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/RispostaMagazzino" xmlns:tns="http://www.example.org/RispostaMagazzino" elementFormDefault="qualified" xmlns:Q1="http://www.example.org/RisultatiRicercaArticolo">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:Q1="http://www.example.org/RisultatiRicercaArticolo" xmlns:tns="http://www.example.org/RispostaMagazzino" elementFormDefault="qualified" targetNamespace="http://www.example.org/RispostaMagazzino">
 
-    <import namespace="http://www.example.org/RisultatiRicercaArticolo"></import>
-    <element name="Risposta" type="tns:RispType"></element>
+    <import namespace="http://www.example.org/RisultatiRicercaArticolo"/>
+    <element name="Risposta" type="tns:RispType"/>
 
     <complexType name="RispType">
     	<sequence>
-    		<element name="Stato" type="string"></element>
-    		<element name="RisultatiRicerca"
-    			type="Q1:RisultatiRicercaArticoloType" minOccurs="0" maxOccurs="1">
+    		<element name="Stato" type="string"/>
+    		<element maxOccurs="1" minOccurs="0" name="RisultatiRicerca" type="Q1:RisultatiRicercaArticoloType">
     		</element>
     	</sequence>
     </complexType>
