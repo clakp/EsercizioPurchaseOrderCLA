@@ -14,6 +14,8 @@
     xmlns:ns14="http://www.example.com/namespaces/tns/1637929251629"
     xmlns:ns15="http://www.example.com/namespaces/tns/1637929275311"
     xmlns:ns16="http://www.example.com/namespaces/tns/1637929373966"
+    xmlns:ns17="http://tns.tibco.com/bw/palette/internal/activityerror+bw.internal.end"
+    xmlns:ns18="http://tns.tibco.com/bw/palette/internal/activityerror+com.tibco.bw.core.design.process.editor.Activity_4002_Throw"
     xmlns:ns2="http://tns.tibco.com/bw/palette/internal/activityerror+bw.jdbc.JDBCQuery"
     xmlns:ns3="http://www.tibco.com/pe/WriteToLogActivitySchema"
     xmlns:ns4="http://www.example.org/RicercaArticolo"
@@ -439,6 +441,39 @@
                     </sequence>
                 </complexType>
             </element>
+        </schema>
+        <schema elementFormDefault="unqualified"
+            targetNamespace="http://tns.tibco.com/bw/palette/internal/activityerror+bw.internal.end"
+            xmlns="http://www.w3.org/2001/XMLSchema"
+            xmlns:Q1="http://www.example.com/namespaces/tns/1637926382693"
+            xmlns:Q2="http://www.example.com/namespaces/tns/1637929251629"
+            xmlns:Q3="http://www.example.com/namespaces/tns/1637929275311"
+            xmlns:Q4="http://www.example.com/namespaces/tns/1637929373966" xmlns:tns="http://tns.tibco.com/bw/palette/internal/activityerror+bw.internal.end">
+            <import namespace="http://www.example.com/namespaces/tns/1637929373966"/>
+            <import namespace="http://www.example.com/namespaces/tns/1637929275311"/>
+            <import namespace="http://www.example.com/namespaces/tns/1637929251629"/>
+            <import namespace="http://www.example.com/namespaces/tns/1637926382693"/>
+            <element name="ActivityErrorData" type="tns:ActivityErrorDataType"/>
+            <complexType name="ActivityErrorDataType">
+                <choice>
+                    <element maxOccurs="1" minOccurs="0" ref="Q1:name_exist"/>
+                    <element maxOccurs="1" minOccurs="0" ref="Q2:non_disponibile"/>
+                    <element maxOccurs="1" minOccurs="0" ref="Q3:in_attesa"/>
+                    <element maxOccurs="1" minOccurs="0" ref="Q4:quantity"/>
+                </choice>
+            </complexType>
+        </schema>
+        <schema elementFormDefault="unqualified"
+            targetNamespace="http://tns.tibco.com/bw/palette/internal/activityerror+com.tibco.bw.core.design.process.editor.Activity_4002_Throw"
+            xmlns="http://www.w3.org/2001/XMLSchema"
+            xmlns:Q1="http://www.example.com/namespaces/tns/1637926382693" xmlns:tns="http://tns.tibco.com/bw/palette/internal/activityerror+com.tibco.bw.core.design.process.editor.Activity_4002_Throw">
+            <import namespace="http://www.example.com/namespaces/tns/1637926382693"/>
+            <element name="ActivityErrorData" type="tns:ActivityErrorDataType"/>
+            <complexType name="ActivityErrorDataType">
+                <choice>
+                    <element maxOccurs="1" minOccurs="0" ref="Q1:name_exist"/>
+                </choice>
+            </complexType>
         </schema>
     </tibex:Types>
     <tibex:ProcessInfo callable="true" createdBy="Claudia"
@@ -1258,6 +1293,16 @@
         <bpws:variable element="ns3:ActivityInput" name="Log2-input" sca-bpel:internal="true"/>
         <bpws:variable element="ns3:ActivityInput" name="Log3-input" sca-bpel:internal="true"/>
         <bpws:variable element="ns3:ActivityInput" name="Log4-input" sca-bpel:internal="true"/>
+        <bpws:variable element="ns17:ActivityErrorData"
+            name="_error_End" sca-bpel:internal="true"/>
+        <bpws:variable element="ns18:ActivityErrorData"
+            name="_error_Throw" sca-bpel:internal="true"/>
+        <bpws:variable element="ns18:ActivityErrorData"
+            name="_error_Throw1" sca-bpel:internal="true"/>
+        <bpws:variable element="ns18:ActivityErrorData"
+            name="_error_Throw2" sca-bpel:internal="true"/>
+        <bpws:variable element="ns18:ActivityErrorData"
+            name="_error_Throw3" sca-bpel:internal="true"/>
     </bpws:variables>
     <bpws:extensions>
         <bpws:extension mustUnderstand="no" namespace="http://www.eclipse.org/gmf/runtime/1.0.2/notation"/>

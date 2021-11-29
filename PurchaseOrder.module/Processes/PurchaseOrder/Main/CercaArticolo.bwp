@@ -18,6 +18,7 @@
     xmlns:ns18="http://www.tibco.com/namespaces/tnt/plugins/restinvoke+79a98376-287a-4fc4-85e2-917ae9648913+RestInvokeOutput"
     xmlns:ns19="http://tns.tibco.com/bw/activity/sleep/xsd"
     xmlns:ns2="http://www.example.org/RispostaMagazzino"
+    xmlns:ns20="http://tns.tibco.com/bw/palette/internal/activityerror+de0f70a2-f9ad-4ef5-91ae-a2360b8d156b"
     xmlns:ns3="http://www.example.com/namespaces/tns/1637926382693"
     xmlns:ns4="http://www.tibco.com/pe/WriteToLogActivitySchema"
     xmlns:ns5="http://www.example.org/RisultatiRicercaArticolo"
@@ -674,6 +675,27 @@
             </xs:complexType>
             <xs:element name="SleepInputSchema" type="tns:SleepInputSchema"/>
         </xs:schema>
+        <schema elementFormDefault="unqualified"
+            targetNamespace="http://tns.tibco.com/bw/palette/internal/activityerror+de0f70a2-f9ad-4ef5-91ae-a2360b8d156b"
+            xmlns="http://www.w3.org/2001/XMLSchema"
+            xmlns:Q1="http://www.example.com/namespaces/tns/1637926382693"
+            xmlns:Q2="http://www.example.com/namespaces/tns/1637929251629"
+            xmlns:Q3="http://www.example.com/namespaces/tns/1637929275311"
+            xmlns:Q4="http://www.example.com/namespaces/tns/1637929373966" xmlns:tns="http://tns.tibco.com/bw/palette/internal/activityerror+de0f70a2-f9ad-4ef5-91ae-a2360b8d156b">
+            <import namespace="http://www.example.com/namespaces/tns/1637929373966"/>
+            <import namespace="http://www.example.com/namespaces/tns/1637929275311"/>
+            <import namespace="http://www.example.com/namespaces/tns/1637929251629"/>
+            <import namespace="http://www.example.com/namespaces/tns/1637926382693"/>
+            <element name="ActivityErrorData" type="tns:ActivityErrorDataType"/>
+            <complexType name="ActivityErrorDataType">
+                <choice>
+                    <element maxOccurs="1" minOccurs="0" ref="Q1:name_exist"/>
+                    <element maxOccurs="1" minOccurs="0" ref="Q2:non_disponibile"/>
+                    <element maxOccurs="1" minOccurs="0" ref="Q3:in_attesa"/>
+                    <element maxOccurs="1" minOccurs="0" ref="Q4:quantity"/>
+                </choice>
+            </complexType>
+        </schema>
         <wsdl:definitions
             targetNamespace="http://xmlns.example.com/20211126122056PLT"
             xmlns:extns="http://www.example.org/RicercaArticolo"
@@ -2224,6 +2246,8 @@
             name="_error_InvokeRESTAPI1" sca-bpel:internal="true"/>
         <bpws:variable element="ns19:SleepInputSchema"
             name="Sleep-input" sca-bpel:internal="true"/>
+        <bpws:variable element="ns20:ActivityErrorData"
+            name="_error_Magazzino" sca-bpel:internal="true"/>
     </bpws:variables>
     <bpws:extensions>
         <bpws:extension mustUnderstand="no" namespace="http://www.eclipse.org/gmf/runtime/1.0.2/notation"/>

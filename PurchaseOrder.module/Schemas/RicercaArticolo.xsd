@@ -1,12 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/RicercaArticolo" xmlns:tns="http://www.example.org/RicercaArticolo" elementFormDefault="qualified">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.example.org/RicercaArticolo" elementFormDefault="qualified" targetNamespace="http://www.example.org/RicercaArticolo">
 
-    <element name="RicercaArticolo" type="tns:RicercaArticoloType"></element>
+    <element name="RicercaArticolo" type="tns:RicercaArticoloType"/>
     
     <complexType name="RicercaArticoloType">
     	<sequence>
-    		<element name="Nome" type="string"></element>
-    		<element name="Quantità" type="int"></element>
+    		<element name="Nome" type="string"/>
+    		<element name="Quantità" type="int"/>
     	</sequence>
     </complexType>
 
