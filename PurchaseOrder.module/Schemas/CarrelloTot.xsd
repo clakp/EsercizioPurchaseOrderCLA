@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/CarrelloTot" xmlns:tns="http://www.example.org/CarrelloTot" elementFormDefault="qualified" xmlns:Q1="http://www.example.org/RisultatiRicercaArticolo">
+
+    <import namespace="http://www.example.org/RisultatiRicercaArticolo"></import>
+    <element name="Carrello" type="tns:CarrelloType"></element>
+
+    <complexType name="CarrelloType">
+    	<sequence>
+            <element name="Risposta" type="string"></element>
+            <element name="Prodotto" type="tns:ProdottoType"
+    			minOccurs="0" maxOccurs="unbounded">
+    		</element>
+    		<element name="Prezzo_totale" type="decimal" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="ProdottoType">
+    	<sequence>
+    		<element name="Nome" type="string"></element>
+    		<element name="Quantità" type="int"></element>
+    		<element name="Prezzo" type="decimal"></element>
+    	</sequence>
+    </complexType>
+</schema>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<wsdl:definitions xmlns:extns="http://www.example.org/RicercaArticolo" xmlns:tns="http://www.example.org/wsdl/1638177588987" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Carrello" targetNamespace="http://www.example.org/wsdl/1638177588987">
+<wsdl:definitions xmlns:extns="http://www.example.org/RicercaArticolo" xmlns:tns="http://www.example.org/wsdl/1638177588987" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Carrello" targetNamespace="http://www.example.org/wsdl/1638177588987" xmlns:xsd1="http://www.example.org/CarrelloTot">
   <wsdl:import location="../Schemas/RicercaArticolo.xsd" namespace="http://www.example.org/RicercaArticolo"/>
   <wsdl:types>
     <xsd:schema elementFormDefault="unqualified" targetNamespace="http://www.example.org/wsdl/1638177588987">
@@ -18,12 +18,15 @@
         </xsd:complexType>
       </xsd:element>
     </xsd:schema>
-  </wsdl:types>
+    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    	<xsd:import namespace="http://www.example.org/CarrelloTot"
+    		schemaLocation="../Schemas/CarrelloTot.xsd">
+    	</xsd:import></xsd:schema></wsdl:types>
   <wsdl:message name="operationRequest">
     <wsdl:part element="extns:RicercaArticolo" name="parameters" />
   </wsdl:message>
   <wsdl:message name="operationResponse">
-    <wsdl:part element="tns:operationResponse" name="parameters"/>
+    <wsdl:part element="xsd1:Carrello" name="parameters"/>
   </wsdl:message>
   <wsdl:portType name="Carrello">
     <wsdl:operation name="operation">

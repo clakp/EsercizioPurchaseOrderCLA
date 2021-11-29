@@ -16,6 +16,7 @@
     xmlns:ns16="http://www.example.com/namespaces/tns/1637929373966"
     xmlns:ns17="http://tns.tibco.com/bw/palette/internal/activityerror+bw.internal.end"
     xmlns:ns18="http://tns.tibco.com/bw/palette/internal/activityerror+com.tibco.bw.core.design.process.editor.Activity_4002_Throw"
+    xmlns:ns19="http://schemas.tibco.com/bw/plugins/basic/6.0/Exceptions"
     xmlns:ns2="http://tns.tibco.com/bw/palette/internal/activityerror+bw.jdbc.JDBCQuery"
     xmlns:ns3="http://www.tibco.com/pe/WriteToLogActivitySchema"
     xmlns:ns4="http://www.example.org/RicercaArticolo"
@@ -28,76 +29,6 @@
     xmlns:sca-bpel="http://docs.oasis-open.org/ns/opencsa/sca-bpel/200801"
     xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"
     xmlns:tibprop="http://ns.tibco.com/bw/property" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-    <tibex:VariableDescriptor type="MemorySaving">
-        <task name="flow">
-            <endingVariables>
-                <variable>JDBCQuery2</variable>
-                <variable>JDBCQuery</variable>
-            </endingVariables>
-        </task>
-        <task name="JDBCQuery">
-            <endingVariables>
-                <variable>JDBCQuery-input</variable>
-            </endingVariables>
-        </task>
-        <task name="Log">
-            <endingVariables>
-                <variable>Log-input</variable>
-            </endingVariables>
-        </task>
-        <task name="Log1">
-            <endingVariables>
-                <variable>Log1-input</variable>
-            </endingVariables>
-        </task>
-        <task name="Throw">
-            <endingVariables>
-                <variable>Throw-input</variable>
-            </endingVariables>
-        </task>
-        <task name="JDBCQuery1">
-            <endingVariables>
-                <variable>JDBCQuery1-input</variable>
-                <variable>JDBCQuery1</variable>
-            </endingVariables>
-        </task>
-        <task name="Throw1">
-            <endingVariables>
-                <variable>Throw1-input</variable>
-            </endingVariables>
-        </task>
-        <task name="Throw2">
-            <endingVariables>
-                <variable>Throw2-input</variable>
-            </endingVariables>
-        </task>
-        <task name="JDBCQuery2">
-            <endingVariables>
-                <variable>JDBCQuery2-input</variable>
-            </endingVariables>
-        </task>
-        <task name="Throw3">
-            <endingVariables>
-                <variable>Throw3-input</variable>
-            </endingVariables>
-        </task>
-        <task name="Log2">
-            <endingVariables>
-                <variable>Log2-input</variable>
-            </endingVariables>
-        </task>
-        <task name="Log3">
-            <endingVariables>
-                <variable>Log3-input</variable>
-            </endingVariables>
-        </task>
-        <task name="Log4">
-            <endingVariables>
-                <variable>Log4-input</variable>
-                <variable>Start</variable>
-            </endingVariables>
-        </task>
-    </tibex:VariableDescriptor>
     <tibex:Types>
         <xs:schema attributeFormDefault="unqualified"
             elementFormDefault="qualified"
@@ -1121,7 +1052,7 @@
                             <styles xsi:type="bwnotation:BackgroundStyle"/>
                             <styles xsi:type="bwnotation:ResizingStyle"/>
                             <element href="//0/@process/@activity"/>
-                            <layoutConstraint height="372" width="570" xsi:type="notation:Bounds"/>
+                            <layoutConstraint height="404" width="779" xsi:type="notation:Bounds"/>
                         </children>
                         <styles xsi:type="notation:SortingStyle"/>
                         <styles xsi:type="notation:FilteringStyle"/>
@@ -1131,7 +1062,7 @@
                     <styles xsi:type="bwnotation:BackgroundStyle"/>
                     <styles xsi:type="bwnotation:ResizingStyle"/>
                     <element href="//0/@process/@activity"/>
-                    <layoutConstraint height="440" width="570" x="1"
+                    <layoutConstraint height="472" width="779" x="1"
                         xsi:type="notation:Bounds" y="1"/>
                 </children>
                 <styles xsi:type="notation:SortingStyle"/>
@@ -1140,7 +1071,7 @@
             </children>
             <styles fontName="Segoe UI" lineColor="0" xsi:type="notation:ShapeStyle"/>
             <element href="//0/@process"/>
-            <layoutConstraint height="492" width="1121" xsi:type="notation:Bounds"/>
+            <layoutConstraint height="524" width="1121" xsi:type="notation:Bounds"/>
         </children>
         <styles xsi:type="notation:DiagramStyle"/>
         <element href="//0"/>
@@ -1315,6 +1246,8 @@
             namespace="http://www.example.com/namespaces/tns/1637929373966" prefix="tns10"/>
         <tibex:namespaceItem
             namespace="http://www.w3.org/2001/XMLSchema" prefix="xsd"/>
+        <tibex:namespaceItem
+            namespace="http://schemas.tibco.com/bw/plugins/basic/6.0/Exceptions" prefix="tns11"/>
     </tibex:NamespaceRegistry>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.example.org/RicercaArticolo"/>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.example.org/RispostaMagazzino"/>
