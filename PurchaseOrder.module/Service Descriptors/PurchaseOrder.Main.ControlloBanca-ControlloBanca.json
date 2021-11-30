@@ -1,0 +1,64 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "1.0",
+    "title" : "ControlloBanca",
+    "description" : "ControlloBanca service"
+  },
+  "host" : "localhost:8081",
+  "basePath" : "/",
+  "schemes" : [ "http" ],
+  "paths" : {
+    "/controllobanca" : {
+      "get" : {
+        "summary" : "getControlloBanca",
+        "description" : "getControlloBanca",
+        "operationId" : "get-controllobanca",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "numerocarta",
+          "in" : "query",
+          "description" : "",
+          "type" : "string",
+          "required" : false
+        }, {
+          "name" : "scadenzacarta",
+          "in" : "query",
+          "description" : "",
+          "type" : "string",
+          "format" : "date",
+          "required" : false
+        }, {
+          "name" : "totaleprezzo",
+          "in" : "query",
+          "description" : "",
+          "type" : "number",
+          "format" : "double",
+          "required" : false
+        }, {
+          "name" : "codicecarta",
+          "in" : "query",
+          "description" : "",
+          "type" : "string",
+          "required" : false
+        }, {
+          "name" : "username",
+          "in" : "query",
+          "description" : "",
+          "type" : "string",
+          "required" : false
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "a string to be returned",
+            "schema" : {
+              "type" : "string"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : { }
+}

@@ -16,6 +16,10 @@
         {
             "location": "Service Descriptors/PurchaseOrder.Main.CercaArticolo-CercaArticolo.json",
             "type": "generated"
+        },
+        {
+            "location": "Service Descriptors/PurchaseOrder.Main.ControlloBanca-ControlloBanca.json",
+            "type": "generated"
         }
     ]
 }

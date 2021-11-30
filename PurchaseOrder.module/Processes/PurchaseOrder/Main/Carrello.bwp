@@ -7,6 +7,7 @@
     xmlns:ns="http://www.tibco.com/pe/EngineTypes"
     xmlns:ns0="http://xmlns.example.com/20211129101938PLT"
     xmlns:ns1="http://www.example.org/wsdl/1638177588987"
+    xmlns:ns10="http://www.example.com/namespaces/tns/1638268880517"
     xmlns:ns2="http://www.tibco.com/pe/WriteToLogActivitySchema"
     xmlns:ns3="http://www.example.org/RicercaArticolo"
     xmlns:ns4="http://www.example.org/Readandwrite"
@@ -19,56 +20,6 @@
     xmlns:sca-bpel="http://docs.oasis-open.org/ns/opencsa/sca-bpel/200801"
     xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"
     xmlns:tibprop="http://ns.tibco.com/bw/property" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-    <tibex:VariableDescriptor type="MemorySaving">
-        <task name="operationOut">
-            <endingVariables>
-                <variable>operationOut-input</variable>
-                <variable>Aggiornamento</variable>
-                <variable>JDBCQuery</variable>
-            </endingVariables>
-        </task>
-        <task name="Log">
-            <endingVariables>
-                <variable>Log-input</variable>
-            </endingVariables>
-        </task>
-        <task name="Aggiornamento">
-            <endingVariables>
-                <variable>Aggiornamento-input</variable>
-                <variable>operation</variable>
-            </endingVariables>
-        </task>
-        <task name="JDBCQuery">
-            <endingVariables>
-                <variable>JDBCQuery-input</variable>
-            </endingVariables>
-        </task>
-        <task name="Iterate">
-            <endingVariables>
-                <variable>currentElement</variable>
-            </endingVariables>
-        </task>
-        <task name="Log1">
-            <endingVariables>
-                <variable>Log1-input</variable>
-            </endingVariables>
-        </task>
-        <task name="Reply">
-            <endingVariables>
-                <variable>Reply-input</variable>
-            </endingVariables>
-        </task>
-        <task name="Log2">
-            <endingVariables>
-                <variable>Log2-input</variable>
-            </endingVariables>
-        </task>
-        <task name="Log3">
-            <endingVariables>
-                <variable>Log3-input</variable>
-            </endingVariables>
-        </task>
-    </tibex:VariableDescriptor>
     <tibex:Types>
         <xs:schema attributeFormDefault="unqualified"
             elementFormDefault="qualified"
@@ -1717,6 +1668,7 @@
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.example.org/RicercaArticolo"/>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.example.org/Readandwrite"/>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.example.com/namespaces/tns/1638189155687"/>
+    <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.example.com/namespaces/tns/1638268880517"/>
     <bpws:partnerLinks>
         <bpws:partnerLink myRole="use" name="Carrello"
             partnerLinkType="ns0:partnerLinkType"
@@ -1778,9 +1730,9 @@
                     tibex:xpdlId="e238b464-3b02-4044-8d45-703abd4c34d4" variable="operation">
                     <bpws:scope name="scope1">
                         <bpws:faultHandlers>
-                            <bpws:catch faultElement="ns4:output"
-                                faultName="ns4:output"
-                                faultVariable="output" tibex:xpdlId="cb29773e-519d-4445-8980-eb798ea6e597">
+                            <bpws:catch faultElement="ns10:RestApiError"
+                                faultName="ns10:RestApiError"
+                                faultVariable="RestApiError" tibex:xpdlId="cb29773e-519d-4445-8980-eb798ea6e597">
                                 <bpws:scope name="scope2">
                                     <bpws:flow name="flow2">
                                     <bpws:links>
@@ -1793,23 +1745,10 @@
                                     portType="ns1:Carrello"
                                     tibex:xpdlId="c6d19966-115b-4dc2-8502-e1a2083504b0" variable="Reply-input">
                                     <tibex:inputBinding expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
-&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tns1="http://www.example.org/wsdl/1638177588987" xmlns:tns3="http://www.example.org/CarrelloTot" version="2.0"&gt;
-    &lt;xsl:param name="output"/&gt;
-    &lt;xsl:template name="Reply-input" match="/"&gt;
-        &lt;tns1:operationResponse&gt;
-            &lt;parameters&gt;
-                &lt;tns3:Carrello&gt;
-                    &lt;tns3:Risposta&gt;
-                        &lt;xsl:value-of select="$output"/&gt;
-                    &lt;/tns3:Risposta&gt;
-                &lt;/tns3:Carrello&gt;
-            &lt;/parameters&gt;
-        &lt;/tns1:operationResponse&gt;
-    &lt;/xsl:template&gt;
-&lt;/xsl:stylesheet&gt;</tibex:inputBinding>
+&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tns1="http://www.example.org/wsdl/1638177588987" xmlns:tns3="http://www.example.org/CarrelloTot" xmlns:tns="http://www.example.com/namespaces/tns/1638268880517" version="2.0"&gt;&lt;xsl:param name="RestApiError"/&gt;&lt;xsl:template name="Reply-input" match="/"&gt;&lt;tns1:operationResponse&gt;&lt;parameters&gt;&lt;tns3:Carrello&gt;&lt;tns3:Risposta&gt;&lt;xsl:value-of select="$RestApiError/tns:name"/&gt;&lt;/tns3:Risposta&gt;&lt;/tns3:Carrello&gt;&lt;/parameters&gt;&lt;/tns1:operationResponse&gt;&lt;/xsl:template&gt;&lt;/xsl:stylesheet&gt;</tibex:inputBinding>
                                     <tibex:inputBindings>
                                     <tibex:partBinding
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns1=&quot;http://www.example.org/wsdl/1638177588987&quot; xmlns:tns3=&quot;http://www.example.org/CarrelloTot&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;output&quot;/>&#xa;    &lt;xsl:template name=&quot;Reply-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns3:Carrello>&#xa;            &lt;tns3:Risposta>&#xa;                &lt;xsl:value-of select=&quot;$output&quot;/>&#xa;            &lt;/tns3:Risposta>&#xa;        &lt;/tns3:Carrello>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns1=&quot;http://www.example.org/wsdl/1638177588987&quot; xmlns:tns3=&quot;http://www.example.org/CarrelloTot&quot; xmlns:tns=&quot;http://www.example.com/namespaces/tns/1638268880517&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;RestApiError&quot;/>&#xa;    &lt;xsl:template name=&quot;Reply-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns3:Carrello>&#xa;            &lt;tns3:Risposta>&#xa;                &lt;xsl:value-of select=&quot;$RestApiError/tns:name&quot;/>&#xa;            &lt;/tns3:Risposta>&#xa;        &lt;/tns3:Carrello>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                                     </tibex:inputBindings>
                                     <bpws:targets>
                                     <bpws:target linkName="Log2ToReply"/>
