@@ -19,6 +19,56 @@
     xmlns:sca-bpel="http://docs.oasis-open.org/ns/opencsa/sca-bpel/200801"
     xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"
     xmlns:tibprop="http://ns.tibco.com/bw/property" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <tibex:VariableDescriptor type="MemorySaving">
+        <task name="operationOut">
+            <endingVariables>
+                <variable>operationOut-input</variable>
+                <variable>Aggiornamento</variable>
+                <variable>JDBCQuery</variable>
+            </endingVariables>
+        </task>
+        <task name="Log">
+            <endingVariables>
+                <variable>Log-input</variable>
+            </endingVariables>
+        </task>
+        <task name="Aggiornamento">
+            <endingVariables>
+                <variable>Aggiornamento-input</variable>
+                <variable>operation</variable>
+            </endingVariables>
+        </task>
+        <task name="JDBCQuery">
+            <endingVariables>
+                <variable>JDBCQuery-input</variable>
+            </endingVariables>
+        </task>
+        <task name="Iterate">
+            <endingVariables>
+                <variable>currentElement</variable>
+            </endingVariables>
+        </task>
+        <task name="Log1">
+            <endingVariables>
+                <variable>Log1-input</variable>
+            </endingVariables>
+        </task>
+        <task name="Reply">
+            <endingVariables>
+                <variable>Reply-input</variable>
+            </endingVariables>
+        </task>
+        <task name="Log2">
+            <endingVariables>
+                <variable>Log2-input</variable>
+            </endingVariables>
+        </task>
+        <task name="Log3">
+            <endingVariables>
+                <variable>Log3-input</variable>
+            </endingVariables>
+        </task>
+    </tibex:VariableDescriptor>
     <tibex:Types>
         <xs:schema attributeFormDefault="unqualified"
             elementFormDefault="qualified"
@@ -800,8 +850,8 @@
                                     <layoutConstraint
                                     height="40"
                                     width="40"
-                                    x="11"
-                                    xsi:type="notation:Bounds" y="32"/>
+                                    x="21"
+                                    xsi:type="notation:Bounds" y="34"/>
                                     </children>
 
                                     <styles xsi:type="notation:DrawerStyle"/>
@@ -1994,9 +2044,7 @@
                                 </tibex:activityExtension>
                             </bpws:extensionActivity>
                             <bpws:scope name="Iterate"
-                                tibex:group="iterate"
-                                tibex:indexOriginalName="index"
-                                tibex:indexToGlobal="false" tibex:xpdlId="ea20ede5-34ec-41bc-bcfb-6395e52c696c">
+                                tibex:group="iterate" tibex:xpdlId="ea20ede5-34ec-41bc-bcfb-6395e52c696c">
                                 <bpws:targets>
                                     <bpws:target linkName="JDBCQueryToIterate"/>
                                 </bpws:targets>

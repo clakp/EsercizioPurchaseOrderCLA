@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.tibco.com/245beb8800304df5a9a43a3a2c46364f/SOAPServiceBinding1" xmlns:tns0="http://www.example.org/wsdl/1638263966138" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="EseguiOrdine" targetNamespace="http://www.tibco.com/245beb8800304df5a9a43a3a2c46364f/SOAPServiceBinding1">
+  <wsdl:import location="EseguiOrdine.wsdl" namespace="http://www.example.org/wsdl/1638263966138"/>
+  <wsdl:binding name="SOAPServiceBinding1" type="tns0:EseguiOrdine">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="operation">
+      <soap:operation soapAction="operation" style="document"/>
+      <wsdl:input>
+        <soap:body parts="parameters" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body parts="parameters" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="EseguiOrdine">
+    <wsdl:port binding="tns:SOAPServiceBinding1" name="EseguiOrdineSOAP">
+      <soap:address location="http://localhost:8081/SOAPServiceBinding1/eseguiOrdine/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

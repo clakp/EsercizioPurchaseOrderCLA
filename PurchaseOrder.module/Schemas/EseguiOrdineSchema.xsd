@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.example.org/schema/1638263966207" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="unqualified" targetNamespace="http://www.example.org/schema/1638263966207">
+  <element name="operationRequest" type="tns:RequestType">
+
+  </element>
+  <element name="operationResponse" type="tns:ResponseType">
+
+  </element>
+
+  <complexType name="RequestType">
+  	<sequence>
+  		<element name="Username" type="string"></element>
+  		<element name="ID_indirizzo" type="int"></element>
+  		<element name="ID_pagamento" type="int"></element>
+  	</sequence>
+  </complexType>
+
+  <complexType name="ResponseType">
+  	<sequence>
+  		<element name="Risposta" type="string"></element>
+  	</sequence>
+  </complexType>
+</schema>
